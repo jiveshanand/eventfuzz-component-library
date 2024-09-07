@@ -1,4 +1,5 @@
 import type { StorybookConfig } from '@storybook/react-vite';
+import path from 'path';
 
 const config: StorybookConfig = {
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
@@ -27,6 +28,11 @@ const config: StorybookConfig = {
     config.css = {
       postcss: {
         plugins: [require('tailwindcss'), require('autoprefixer')],
+      },
+    };
+    config.resolve = {
+      alias: {
+        '@': path.resolve(__dirname, '../'), // Add your alias configuration here
       },
     };
     return config;

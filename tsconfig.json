@@ -109,7 +109,7 @@
 
 {
   "compilerOptions": {
-    "types": ["jest", "@testing-library/jest-dom"],
+    "types": ["jest", "@testing-library/jest-dom", "node"],
     "target": "ES6",
     "module": "ESNext",
     "declaration": true,
