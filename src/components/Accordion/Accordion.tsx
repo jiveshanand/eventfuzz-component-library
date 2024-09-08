@@ -32,7 +32,8 @@ const AccordionItem: React.FC<{
   return (
     <div className="border-b border-light min-w-4">
       <button
-        className="flex text-2xl items-center justify-between w-full py-4 text-left font-medium focus:outline-none"
+        className="flex text-2xl items-center justify-between w-full py-4 text-left font-medium           
+          hover:underline transition-all duration-700"
         onClick={toggleOpen}
       >
         <span>{title}</span>

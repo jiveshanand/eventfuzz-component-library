@@ -1,8 +1,8 @@
 {
-  "name": "gatherio-components-library",
+  "name": "eventfuzz-components-library",
   "version": "1.0.0",
-  "main": "dist/gatherio-components-library.cjs.js",
-  "module": "dist/gatherio-components-library.es.js",
+  "main": "dist/eventfuzz-components-library.cjs.js",
+  "module": "dist/eventfuzz-components-library.es.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "jest",

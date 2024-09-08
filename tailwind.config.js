@@ -103,6 +103,12 @@ module.exports = {
     fill: (theme) => ({
       ...theme('colors'),
     }),
+
+    boxShadow: {
+      sm: '0 2px 10px #00000030', // Shadow Sm
+      med: '0 12px 32px #0000001F', // Shadow Med
+      lg: '0 8px 36px #0000002B', // Shadow Lg
+    },
   },
   plugins: [],
 };
