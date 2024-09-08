@@ -39,30 +39,36 @@ module.exports = {
       regular: 400,
       light: 300,
     },
+    backgroundImage: (theme) => ({
+      'gradient-1': `linear-gradient(to right, ${theme('colors.gradient.1[0]')}, ${theme('colors.gradient.1[1]')})`, // Gradient 1
+      'gradient-2': `linear-gradient(to right, ${theme('colors.gradient.2[0]')}, ${theme('colors.gradient.2[1]')})`, // Gradient 2
+      'gradient-3': `linear-gradient(to right, ${theme('colors.gradient.3[0]')}, ${theme('colors.gradient.3[1]')})`, // Gradient 3
+      'gradient-4': `linear-gradient(to right, ${theme('colors.gradient.4[0]')}, ${theme('colors.gradient.4[1]')})`, // Gradient 4
+    }),
     colors: {
       // Primary Colors
       primary: {
-        1: '#56F6A0', // Primary 1
-        2: '#01D49E', // Primary 2
+        1: '#58FA80', // Primary 1
+        2: '#01D69E', // Primary 2
         3: '#00B195', // Primary 3
-        4: '#008780', // Primary 4
-        5: '#221158', // Primary 5 (Dark)
+        4: '#00878D', // Primary 4
+        5: '#2E3E5D', // Primary 5 (Dark)
       },
 
       // Gradients (Use these as gradient start and end points)
       gradient: {
-        1: ['#56F6A0', '#01D49E'], // Gradient 1
-        2: ['#01D49E', '#00B195'], // Gradient 2
-        3: ['#00B195', '#008780'], // Gradient 3
-        4: ['#008780', '#221158'], // Gradient 4
+        1: ['#0A949A', '#4DFF7E'], // Gradient 1
+        2: ['#3AE8A2', '#0A959B'], // Gradient 2
+        3: ['#00B195', '#00878D'], // Gradient 3
+        4: ['#00B195', '#2E3E5D'], // Gradient 4
       },
 
       // Neutral Colors
       neutral: {
         1: '#F6F6F6', // Neutral 1
-        2: '#E6E6E6', // Neutral 2
-        3: '#EBEBEB', // Neutral 3
-        4: '#DCDDDD', // Neutral 4
+        2: '#EBEBEB', // Neutral 2
+        3: '#DDDDDD', // Neutral 3
+        4: '#D3D3D3', // Neutral 4
         5: '#C2C2C2', // Neutral 5
         6: '#B0B0B0', // Neutral 6
         7: '#717171', // Neutral 7
@@ -71,22 +77,22 @@ module.exports = {
 
       // Shades (For background, dividers, text)
       shade: {
-        1: '#EFEFEF', // Shade 1
-        2: '#D0D1D5', // Shade 2
-        3: '#B0B0B0', // Shade 3
-        4: '#0D0D1D', // Shade 4 (Darkest)
+        1: '#FFFFFF', // Shade 1
+        2: '#F4F4F4', // Shade 2
+        3: '#BDBDBD', // Shade 3
+        4: '#222222', // Shade 4 (Darkest)
       },
 
       // Support Colors (Success, Warning, Error)
       support: {
         success: {
-          1: '#208267', // Success 1
-          2: '#3AC0AD', // Success 2
+          1: '#298267', // Success 1
+          2: '#3AC0A0', // Success 2
           3: '#E7F4E5', // Success background
         },
         warning: {
           1: '#E86339', // Warning 1
-          2: '#FB873C', // Warning 2
+          2: '#FFB37C', // Warning 2
           3: '#FFF4E4', // Warning background
         },
         error: {
