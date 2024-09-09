@@ -20,17 +20,17 @@ module.exports = {
       sans: ['SF Pro Display', 'sans-serif'],
     },
     fontSize: {
-      // Custom font sizes based on your design
-      '6xl': ['3.75rem', { lineHeight: '110%' }], // 60px with line-height 110%
-      '5xl': ['3rem', { lineHeight: '110%' }], // 48px with line-height 110%
-      '4xl': ['2.25rem', { lineHeight: '110%' }], // 36px with line-height 110%
-      '3xl': ['1.875rem', { lineHeight: '110%' }], // 30px with line-height 110%
-      '2xl': ['1.5rem', { lineHeight: '110%' }], // 24px with line-height 110%
-      xl: ['1.25rem', { lineHeight: '110%' }], // 20px with line-height 110%
-      base: ['1rem', { lineHeight: '150%' }], // 16px with line-height 150%
-      sm: ['0.875rem', { lineHeight: '150%' }], // 14px with line-height 150%
-      xs: ['0.75rem', { lineHeight: '150%' }], // 12px with line-height 150%
-      quote: ['1.5rem', { lineHeight: '150%' }], // For quote text
+      '6xl': ['3rem', { lineHeight: '110%' }], // 48px -> 3rem
+      '5xl': ['2rem', { lineHeight: '110%' }], // 32px -> 2rem
+      '4xl': ['1.5rem', { lineHeight: '110%' }], // 24px -> 1.5rem
+      '3xl': ['1.125rem', { lineHeight: '110%' }], // 18px -> 1.125rem
+      '2xl': ['1rem', { lineHeight: '125%' }], // 16px -> 1rem
+      xl: ['0.875rem', { lineHeight: '110%' }], // 14px -> 0.875rem
+      base: ['0.8125rem', { lineHeight: '150%' }], // 13px -> 0.8125rem
+      sm: ['0.75rem', { lineHeight: '150%' }], // 12px -> 0.75rem
+      xs: ['0.625rem', { lineHeight: '120%' }], // 10px -> 0.625rem
+      'quote-lg': ['2.5rem', { lineHeight: '150%' }], // 40px -> 2.5rem
+      'quote-sm': ['1.25rem', { lineHeight: '150%' }], // 20px -> 1.25rem
     },
     fontWeight: {
       // Custom font weights from your design
