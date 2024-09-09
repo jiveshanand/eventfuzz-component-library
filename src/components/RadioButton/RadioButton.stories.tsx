@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Radio, RadioProps } from './Radio';
+import { RadioButton, RadioButtonProps } from './RadioButton';
 
-const meta: Meta<RadioProps> = {
-  title: 'EventFuzz Components/Radio',
-  component: Radio,
+const meta: Meta<RadioButtonProps> = {
+  title: 'EventFuzz Components/RadioButton',
+  component: RadioButton,
   parameters: {
     layout: 'centered',
   },
@@ -15,6 +15,6 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    label: 'Radio',
+    name: 'options',
   },
 };

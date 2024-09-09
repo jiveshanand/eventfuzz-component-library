@@ -5,10 +5,6 @@
 @tailwind utilities;
 
 @layer components {
-  .custom-radio {
-    @apply flex items-center cursor-pointer relative pl-4
-  }
-
   .custom-radio input[type="radio"]:checked ~ .radio-checkmark {
     @apply bg-primary-4 border-primary-4
   }
