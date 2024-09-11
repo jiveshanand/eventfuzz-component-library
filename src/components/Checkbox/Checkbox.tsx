@@ -28,10 +28,10 @@ export const Checkbox = ({
           value={value}
           checked={checked}
           onChange={(event) => onChange(event.target.value)}
-          className="peer appearance-none w-4 h-4 rounded border accent-primary-4 bg-shade-1 border-neutral-5 checked:border-primary-4 checked:bg-primary-4 hover:border-primary-4 focus:ring-2 focus:ring-offset-2 focus:ring-primary-4 focus:border-primary-4 focus-visible:outline-none"
+          className="peer appearance-none w-4 h-4 rounded border accent-primary-4 bg-shade-1 border-neutral-5 checked:border-primary-4 checked:bg-primary-4 hover:border-primary-4 focus:ring-2 focus:ring-offset-2 focus:ring-primary-4 focus:border-primary-4 focus-visible:outline-none transition duration-75"
         />
         <svg
-          className="hidden absolute peer-checked:block m-auto left-0 right-0"
+          className="absolute inset-0 m-auto pointer-events-none z-10 hidden peer-checked:block"
           xmlns="http://www.w3.org/2000/svg"
           width="12"
           height="10"
@@ -51,12 +51,14 @@ export const Checkbox = ({
         >
           {label}
         </label>
-        {subtext && <p
-          id="helper-checkbox-text"
-          className="text-xl font-regular text-neutral-8"
-        >
-          {subtext}
-        </p>}
+        {subtext && (
+          <p
+            id="helper-checkbox-text"
+            className="text-xl font-regular text-neutral-8"
+          >
+            {subtext}
+          </p>
+        )}
       </div>
     </div>
   );
