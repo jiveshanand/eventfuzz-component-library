@@ -28,7 +28,7 @@ export const Checkbox = ({
           value={value}
           checked={checked}
           onChange={(event) => onChange(event.target.value)}
-          className="peer appearance-none w-4 h-4 rounded border accent-primary-4 bg-shade-1 border-neutral-5 checked:border-primary-4 checked:bg-primary-4 hover:border-primary-4 focus:ring-2 focus:ring-offset-2 focus:ring-primary-4 focus:border-primary-4 "
+          className="peer appearance-none w-4 h-4 rounded border accent-primary-4 bg-shade-1 border-neutral-5 checked:border-primary-4 checked:bg-primary-4 hover:border-primary-4 focus:ring-2 focus:ring-offset-2 focus:ring-primary-4 focus:border-primary-4 focus-visible:outline-none"
         />
         <svg
           className="hidden absolute peer-checked:block m-auto left-0 right-0"
