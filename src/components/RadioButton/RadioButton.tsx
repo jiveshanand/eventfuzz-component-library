@@ -1,3 +1,5 @@
+import "./RadioButton.css"
+
 export interface RadioButtonProps {
   name?: string;
   value?: string;
@@ -37,7 +39,6 @@ export const RadioButton = ({
             name={name}
             value={option.value}
             checked={value === option.value || defaultValue === option.value}
-            onChange={(event) => onValueChange(event.target.value)}
             aria-labelledby={`label-${option.value}`}
             aria-checked={value === option.value}
             className="hidden"

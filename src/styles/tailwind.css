@@ -3,24 +3,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@layer components {
-  .custom-radio input[type="radio"]:checked ~ .radio-checkmark {
-    @apply bg-primary-4 border-primary-4
-  }
-
-  .custom-radio input[type="radio"]:checked ~ .radio-checkmark::before {
-    @apply scale-100
-  }
-
-  .radio-checkmark {
-    transform: translateY(-50%);
-    transition: background-color 0.2s, border-color 0.2s;
-    @apply absolute left-0 top-2/4 w-4 h-4 rounded-full border-2 border-neutral-4 bg-neutral-1 focus:ring-2 focus:ring-primary-4 focus:ring-offset-2 focus:border-primary-4 hover:border-primary-4
-  }
-
-  .radio-checkmark::before {
-    transform: translate(-50%, -50%) scale(0);
-    @apply w-2 h-2 top-[30%] left-[30%] bg-neutral-1 rounded-full absolute content-[""] transition duration-150
-  }
-}
