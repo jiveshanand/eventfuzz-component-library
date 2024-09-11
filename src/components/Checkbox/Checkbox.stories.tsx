@@ -15,7 +15,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  render: () => {
+  render: (args) => {
     const [selectedValue, setSelectedValue] = useState<string>(''); // State for managing selected value
 
     const handleValueChange = (value: string) => {
@@ -24,11 +24,17 @@ export const Default: Story = {
 
     return (
       <Checkbox
-        label="Terms & Conditions"
-        subtext="Read terms and conditions for more information"
+        {...args}
         value={selectedValue} // Pass selected value to the component
         onChange={handleValueChange} // Pass handler function to the component
       />
     );
+  },
+  args: {
+    checked: false,
+    label: 'Terms & Conditions',
+    subtext: 'Read terms and conditions for more information',
+    value: 'tc',
+    className: '',
   },
 };

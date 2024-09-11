@@ -23,7 +23,7 @@ export const RadioButton = ({
   return (
     <div
       role="radiogroup"
-      className={`flex space-y-4 ${orientation === 'horizontal' ? 'flex-row' : 'flex-col'} ${className}`}
+      className={`flex  ${orientation === 'horizontal' ? 'flex-row space-x-4' : 'flex-col space-y-4'} ${className}`}
     >
       {options.map((option) => (
         <label
