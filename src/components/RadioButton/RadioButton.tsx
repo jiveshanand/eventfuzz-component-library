@@ -1,5 +1,3 @@
-import "./RadioButton.css"
-
 export interface RadioButtonProps {
   name?: string;
   value?: string;
@@ -41,10 +39,10 @@ export const RadioButton = ({
             checked={value === option.value || defaultValue === option.value}
             aria-labelledby={`label-${option.value}`}
             aria-checked={value === option.value}
-            className="hidden"
+            className="hidden peer"
           />
           <span
-            className="radio-checkmark"
+            className="radio-checkmark peer-checked:bg-primary-4 peer-checked:border-primary-4 before:peer-checked:scale-100 absolute left-0 w-4 h-4 rounded-full border-2 border-neutral-4 bg-neutral-1 focus:ring-2 focus:ring-primary-4 focus:ring-offset-2 focus:border-primary-4 hover:border-primary-4 before:w-2 before:h-2 before:top-[30%] before:left-[30%] before:content-[''] before:absolute before:bg-neutral-1 before:rounded-full"
             tabIndex={0}
             role="radio"
             aria-checked={value === option.value}
