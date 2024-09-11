@@ -31,7 +31,6 @@ export const Default: Story = {
     );
   },
   args: {
-    checked: false,
     label: 'Terms & Conditions',
     subtext: 'Read terms and conditions for more information',
     value: 'tc',
