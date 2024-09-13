@@ -7,3 +7,5 @@ export { RadioButton } from './components/RadioButton';
 export type { RadioButtonProps } from './components/RadioButton';
 export { Checkbox } from './components/Checkbox';
 export type { CheckboxProps } from './components/Checkbox';
+export { InputField } from './components/InputField';
+export type { InputFieldProps } from './components/InputField';
