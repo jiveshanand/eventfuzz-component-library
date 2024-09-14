@@ -1,7 +1,7 @@
 import React from 'react';
 
 export interface ToggleProps {
-  label: string;
+  label?: string;
   subtext?: string;
   value?: string;
   checked?: boolean;
@@ -23,13 +23,19 @@ export const Toggle = ({
   disabled = false,
 }: ToggleProps) => {
   return (
-    <div className={`flex items-center justify-between gap-3 min-w-[160px] ${className}`}>
-      <label htmlFor="switch-component-desc">
-        <div className="flex flex-col gap-2">
-          <p className="text-2xl text-shade-4 font-regular">{label}</p>
-          {subtext && <p className="text-xl text-neutral-8 font-regular">{subtext}</p>}
-        </div>
-      </label>
+    <div
+      className={`flex items-center justify-between gap-3 min-w-[160px] ${className}`}
+    >
+      {label && (
+        <label htmlFor="switch-component-desc">
+          <div className="flex flex-col gap-2">
+            <p className="text-2xl text-shade-4 font-regular">{label}</p>
+            {subtext && (
+              <p className="text-xl text-neutral-8 font-regular">{subtext}</p>
+            )}
+          </div>
+        </label>
+      )}
 
       <div className="relative inline-flex items-center">
         <input
@@ -37,6 +43,7 @@ export const Toggle = ({
           type="checkbox"
           checked={checked}
           value={value}
+          disabled={disabled}
           onChange={(event) => !disabled && onChange(event.target.checked)}
           className="peer appearance-none w-6 h-5 rounded-full bg-neutral-5 hover:bg-neutral-7 checked:bg-gradient-3 cursor-pointer focus:ring-2 focus:ring-offset-2 focus:ring-neutral-7 focus:checked:ring-primary-3"
         />
