@@ -9,3 +9,5 @@ export { Checkbox } from './components/Checkbox';
 export type { CheckboxProps } from './components/Checkbox';
 export { InputField } from './components/InputField';
 export type { InputFieldProps } from './components/InputField';
+export { Toggle } from './components/Toggle';
+export type { ToggleProps } from './components/Toggle';
