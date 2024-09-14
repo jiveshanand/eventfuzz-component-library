@@ -16,7 +16,7 @@ export interface CalloutsProps {
 /**
  * A custom Callouts component.
  */
-export const Callouts = ({
+export const Callouts: React.FC<CalloutsProps> = ({
   title,
   iconRight,
   codeLabel,
@@ -27,22 +27,28 @@ export const Callouts = ({
   descName,
   variant = 'cancelation',
   className = '',
-}: CalloutsProps) => {
+}) => {
+  // Common styles
+  const commonStyles = 'flex gap-2 border rounded-xl bg-shade-1 border-neutral-3';
+
+  // Variant-specific styles
+  const variantStyles = variant === 'highlight'
+    ? 'p-4 w-[349px]'
+    : 'p-2.5 w-[361px]';
+
+  // Highlight variant
   if (variant === 'highlight') {
     return (
-      <div
-        className={`flex gap-2 p-4 border rounded-xl bg-shade-1 border-neutral-3 w-[349px] ${className}`}
-      >
+      <div className={`${commonStyles} ${variantStyles} ${className}`}>
         <div className="text-sm font-regular text-shade-4">{description}</div>
-        <div>{iconRight}</div>
+        {iconRight && <div>{iconRight}</div>}
       </div>
     );
   }
 
+  // Default 'cancelation' variant
   return (
-    <div
-      className={`flex gap-2 p-2.5 border rounded-xl bg-shade-1 border-neutral-3 w-[361px] ${className}`}
-    >
+    <div className={`${commonStyles} ${variantStyles} ${className}`}>
       <div className="flex flex-col gap-3">
         <div className="text-xl font-semibold text-shade-4">{title}</div>
         <div className="flex gap-3">
@@ -58,8 +64,8 @@ export const Callouts = ({
                 {descName}
               </div>
               <div className="text-xs">
-                <span className="text-neutral-7">{codeLabel} </span>
-                <span className=" text-shade-4">{codeValue}</span>
+                {codeLabel && <span className="text-neutral-7">{codeLabel} </span>}
+                {codeValue && <span className="text-shade-4">{codeValue}</span>}
               </div>
             </div>
           </div>
