@@ -27,14 +27,12 @@ export const Toggle = ({
       className={`flex items-center justify-between gap-3 min-w-[160px] ${className}`}
     >
       {label && (
-        <label htmlFor="switch-component-desc">
-          <div className="flex flex-col gap-2">
-            <p className="text-2xl text-shade-4 font-regular">{label}</p>
-            {subtext && (
-              <p className="text-xl text-neutral-8 font-regular">{subtext}</p>
-            )}
-          </div>
-        </label>
+        <div className="flex flex-col gap-2">
+          <p className="text-2xl text-shade-4 font-regular">{label}</p>
+          {subtext && (
+            <p className="text-xl text-neutral-8 font-regular">{subtext}</p>
+          )}
+        </div>
       )}
 
       <div className="relative inline-flex items-center">
