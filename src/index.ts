@@ -11,3 +11,5 @@ export { InputField } from './components/InputField';
 export type { InputFieldProps } from './components/InputField';
 export { Toggle } from './components/Toggle';
 export type { ToggleProps } from './components/Toggle';
+export { Progress } from './components/Progress';
+export type { ProgressProps } from './components/Progress';
