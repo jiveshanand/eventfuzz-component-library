@@ -4,19 +4,19 @@
   font-family: 'SF Pro Display';
   font-weight: 400;
   font-style: normal;
-  src: url('/fonts/SFProDisplay-Regular.otf') format('truetype');
+  src: url('../assets//fonts/SFProDisplay-Regular.otf') format('truetype');
 }
 
 @font-face {
   font-family: 'SF Pro Display';
   font-weight: 500;
   font-style: normal;
-  src: url('/fonts/SFProDisplay-Medium.otf') format('truetype');
+  src: url('../assets/fonts/SFProDisplay-Medium.otf') format('truetype');
 }
 
 @font-face {
   font-family: 'SF Pro Display';
   font-weight: 600;
   font-style: normal;
-  src: url('/fonts/SFProDisplay-Semibold.otf') format('truetype');
+  src: url('../assets/fonts/SFProDisplay-Semibold.otf') format('truetype');
 }
