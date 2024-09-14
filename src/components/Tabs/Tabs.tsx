@@ -29,7 +29,7 @@ export const Tabs: React.FC<TabsProps> = React.memo(
 
     // Define common styles
     const commonTabStyles =
-      'cursor-pointer focus:ring-2 focus:ring-primary-4 focus-visible:outline-none';
+      'cursor-pointer focus:ring-primary-4 focus-visible:outline-none';
 
     // Variant-specific styles
     const variantStyles = {
@@ -39,8 +39,8 @@ export const Tabs: React.FC<TabsProps> = React.memo(
     }[variant];
 
     const tabStyle = {
-      pills: `w-[151px] py-2 px-2.5 flex justify-center text-sm font-semibold rounded-full hover:bg-shade-1 focus:bg-shade-1 ${commonTabStyles}`,
-      outlined: `flex items-center px-3 py-2 gap-2 rounded-lg text-shade-4 border border-neutral-6 hover:bg-shade-2 focus:bg-shade-1 focus:text-primary-4 focus:ring-1 focus:ring-primary-4 focus:border-primary-4 ${commonTabStyles}`,
+      pills: `w-[151px] py-2 px-2.5 flex justify-center text-sm font-semibold rounded-full hover:bg-shade-1 focus:bg-shade-1 focus:ring-2 ${commonTabStyles}`,
+      outlined: `flex items-center px-3 py-2 gap-2 rounded-lg text-shade-4 border border-neutral-6 hover:bg-shade-2 focus:bg-shade-1 focus:text-primary-4 focus:border-primary-4 focus:ring-1 ${commonTabStyles}`,
       default:
         'peer flex flex-col gap-2 p-2 rounded-lg cursor-pointer focus:text-primary-4 focus:ring-2 focus:ring-primary-4',
     }[variant];
