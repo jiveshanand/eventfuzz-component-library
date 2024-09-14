@@ -83,10 +83,10 @@ export const Outlined: Story = {
 export const Pills: Story = {
   args: {
     options: [
-      { label: 'Dome', icon: tabIcon },
-      { label: 'Dome2', icon: tabIcon },
-      { label: 'Dome3', icon: tabIcon },
-      { label: 'Dome4', icon: tabIcon },
+      { label: 'Dome'},
+      { label: 'Dome2'},
+      { label: 'Dome3'},
+      { label: 'Dome4'},
     ],
     className: '',
     variant: 'pills',
