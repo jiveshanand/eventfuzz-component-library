@@ -1,11 +1,15 @@
+import { cx } from './util';
+
 export interface InputFieldProps {
   label?: string;
   placeholder: string;
   value: string;
   subtext?: string;
   onChange: (value: string) => void;
+  inputType?: 'text' | 'password' | 'number' | 'email';
   hasError?: boolean;
   className?: string;
+  inputClass?: string;
   rightIcon?: React.ReactNode;
 }
 
@@ -18,17 +22,19 @@ export const InputField = ({
   subtext,
   value = '',
   onChange,
+  inputType = 'text',
   hasError = false,
   className = '',
+  inputClass = '',
   rightIcon,
 }: InputFieldProps) => {
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    onChange(event.target.value);
-  };
-
   return (
     <div
-      className={`flex flex-col gap-2.5 ${hasError ? 'text-support-error-1' : 'text-neutral-7'} ${className}`}
+      className={cx(
+        'flex flex-col gap-2.5',
+        hasError ? 'text-support-error-1' : 'text-neutral-7',
+        className,
+      )}
     >
       <div className="relative w-full">
         {label && (
@@ -42,17 +48,28 @@ export const InputField = ({
         <input
           id="input-field"
           placeholder={placeholder}
-          type="text"
+          type={inputType}
           value={value}
-          onChange={handleChange}
+          onChange={(event) => onChange(event.target.value)}
           autoComplete="off"
-          className={`border rounded-lg text-2xl w-full placeholder:text-neutral-7 text-shade-4 focus:border-2 focus:border-shade-4 focus-visible:outline-none transition
-            ${label ? 'p-2.5 pt-5' : 'py-3 px-2.5'} 
-            ${hasError ? 'bg-support-error-3 border-support-error-1 focus:bg-inherit focus:border-support-error-1' : 'border-neutral-6'}`}
+          className={cx(
+            'border rounded-lg text-2xl w-full placeholder:text-neutral-7 text-shade-4 focus:border-2 focus:border-shade-4 focus-visible:outline-none transition',
+            label ? 'p-2.5 pt-5' : 'py-3 px-2.5',
+            hasError
+              ? 'bg-support-error-3 border-support-error-1 focus:bg-inherit focus:border-support-error-1'
+              : 'border-neutral-6',
+            inputType === 'number' &&
+              '[appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none',
+            !!rightIcon && 'pr-5',
+            inputClass,
+          )}
         />
         {rightIcon && (
           <span
-            className={`absolute right-0 flex items-center pr-3 pointer-events-none ${label ? 'bottom-3 pb-px' : 'inset-y-0'}`}
+            className={cx(
+              'absolute right-0 flex items-center pr-3 pointer-events-none',
+              label ? 'bottom-3 pb-px' : 'inset-y-0',
+            )}
           >
             {rightIcon}
           </span>
@@ -61,7 +78,10 @@ export const InputField = ({
       {subtext && (
         <div
           id="input-field-subtext"
-          className={`flex items-center gap-2 text-xl font-regular w-full ${hasError ? 'text-support-error-1' : 'text-inherit'}`}
+          className={cx(
+            'flex items-center gap-2 text-xl font-regular w-full',
+            hasError ? 'text-support-error-1' : 'text-inherit',
+          )}
         >
           {hasError && (
             <span>
