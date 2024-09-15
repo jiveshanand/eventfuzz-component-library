@@ -53,7 +53,7 @@ export const Tabs: React.FC<TabsProps> = React.memo(
         {options.map((item, index) => (
           <div key={item.label} className="flex flex-col gap-2">
             <div
-              className={`${tabStyle} ${variant === 'pills' ? (activeTab === index ? 'bg-shade-1' : '') : ''}`}
+              className={`${tabStyle} ${variant === 'pills' ? (activeTab === index ? 'bg-shade-1 shadow-sm' : '') : ''}`}
               onClick={() => handleTabClick(index)}
               tabIndex={0}
               role="tab"
