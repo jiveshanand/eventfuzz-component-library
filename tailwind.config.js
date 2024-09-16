@@ -6,6 +6,7 @@ module.exports = {
       0: '0', // 0px
       1: '0.25rem', // 4px
       2: '0.5rem', // 8px
+      2.5: '0.75rem', // 12px
       3: '1rem', // 16px
       4: '1.5rem', // 24px
       5: '2rem', // 32px
@@ -46,6 +47,7 @@ module.exports = {
       'gradient-4': `linear-gradient(to right, ${theme('colors.gradient.4[0]')}, ${theme('colors.gradient.4[1]')})`, // Gradient 4
     }),
     colors: {
+      inherit: 'inherit',
       // Primary Colors
       primary: {
         1: '#58FA80', // Primary 1
