@@ -12,8 +12,8 @@ module.exports = {
       5: '2rem', // 32px
       6: '3rem', // 48px
       7: '4.5rem', // 72px
-      8: '6rem', // 96px
       9: '8rem', // 128px
+      9.5: '10rem', //160px
       10: '12rem', // 192px
     },
     fontFamily: {
