@@ -1,4 +1,6 @@
-module.exports = {
+import type { Config } from 'tailwindcss';
+
+export const tailwindThemeConfig: Config = {
   content: ['./src/**/*.{js,jsx,ts,tsx}', './stories/**/*.{js,jsx,ts,tsx}'],
   theme: {
     spacing: {
@@ -6,7 +8,6 @@ module.exports = {
       0: '0', // 0px
       1: '0.25rem', // 4px
       2: '0.5rem', // 8px
-      2.5: '0.75rem', // 12px
       3: '1rem', // 16px
       4: '1.5rem', // 24px
       5: '2rem', // 32px
@@ -35,19 +36,18 @@ module.exports = {
     },
     fontWeight: {
       // Custom font weights from your design
-      semibold: 600,
-      medium: 500,
-      regular: 400,
-      light: 300,
+      semibold: '600',
+      medium: '500',
+      regular: '400',
+      light: '300',
     },
-    backgroundImage: (theme) => ({
+    backgroundImage: (theme: any) => ({
       'gradient-1': `linear-gradient(to right, ${theme('colors.gradient.1[0]')}, ${theme('colors.gradient.1[1]')})`, // Gradient 1
       'gradient-2': `linear-gradient(to right, ${theme('colors.gradient.2[0]')}, ${theme('colors.gradient.2[1]')})`, // Gradient 2
       'gradient-3': `linear-gradient(to right, ${theme('colors.gradient.3[0]')}, ${theme('colors.gradient.3[1]')})`, // Gradient 3
       'gradient-4': `linear-gradient(to right, ${theme('colors.gradient.4[0]')}, ${theme('colors.gradient.4[1]')})`, // Gradient 4
     }),
     colors: {
-      inherit: 'inherit',
       // Primary Colors
       primary: {
         1: '#58FA80', // Primary 1
@@ -59,10 +59,12 @@ module.exports = {
 
       // Gradients (Use these as gradient start and end points)
       gradient: {
-        1: ['#0A949A', '#4DFF7E'], // Gradient 1
-        2: ['#3AE8A2', '#0A959B'], // Gradient 2
-        3: ['#00B195', '#00878D'], // Gradient 3
-        4: ['#00B195', '#2E3E5D'], // Gradient 4
+        gradient: {
+          1: { start: '#0A949A', end: '#4DFF7E' }, // Gradient 1
+          2: { start: '#3AE8A2', end: '#0A959B' }, // Gradient 2
+          3: { start: '#00B195', end: '#00878D' }, // Gradient 3
+          4: { start: '#00B195', end: '#2E3E5D' }, // Gradient 4
+        },
       },
 
       // Neutral Colors
@@ -104,11 +106,11 @@ module.exports = {
         },
       },
     },
-    borderColor: (theme) => ({
+    borderColor: (theme: any) => ({
       ...theme('colors'),
       light: '#D3D3D3',
     }),
-    fill: (theme) => ({
+    fill: (theme: any) => ({
       ...theme('colors'),
     }),
 
@@ -120,3 +122,5 @@ module.exports = {
   },
   plugins: [],
 };
+
+export default tailwindThemeConfig;

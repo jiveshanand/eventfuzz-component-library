@@ -110,12 +110,13 @@
 {
   "compilerOptions": {
     "types": ["jest", "@testing-library/jest-dom", "node"],
-    "target": "ES6",
+    "target": "ESNext",
     "module": "ESNext",
     "declaration": true,
     "emitDeclarationOnly": false,
     "declarationDir": "dist",
-    "outDir": "dist",
+    "outDir": "./dist",
+    "rootDir": ".",
     "jsx": "react-jsx",
     "strict": true,
     "esModuleInterop": true,
@@ -124,8 +125,10 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "@eventfuzz/tailwind-config": ["tailwind.config.ts"]
     }
   },
   "include": ["src"],
