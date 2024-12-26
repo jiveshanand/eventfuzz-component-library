@@ -113,6 +113,8 @@
     "target": "ES6",
     "module": "ESNext",
     "declaration": true,
+    "emitDeclarationOnly": false,
+    "declarationDir": "dist",
     "outDir": "dist",
     "jsx": "react-jsx",
     "strict": true,
