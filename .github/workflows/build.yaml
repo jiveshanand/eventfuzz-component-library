@@ -1,0 +1,41 @@
+name: Build and Test Library
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types:
+      - opened # Trigger when a PR is created
+      - synchronize # Trigger when a PR is updated (e.g., new commits pushed)
+      - reopened # Trigger when a previously closed PR is reopened
+
+jobs:
+  build:
+    name: Build Library
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the code
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm'
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Step 4: Run the build
+      - name: Build Library
+        run: npm run build
+
+      # Step 5: Run tests (Optional)
+      - name: Run Tests
+        run: npm test
+        continue-on-error: true

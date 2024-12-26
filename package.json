@@ -1,7 +1,7 @@
 {
-  "name": "eventfuzz-components-library",
-  "version": "1.0.0",
-  "main": "dist/eventfuzz-components-library.cjs.js",
+  "name": "@eventfuzz/components",
+  "version": "1.4.3",
+  "main": "dist/eventfuzz-components-library.umd.js",
   "homepage": "https://jiveshanand.github.io/eventfuzz-component-library",
   "module": "dist/eventfuzz-components-library.es.js",
   "types": "dist/index.d.ts",
@@ -9,6 +9,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "dev": "vite",
+    "build:types": "tsc --emitDeclarationOnly --outDir dist",
     "build": "vite build",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
@@ -16,6 +17,10 @@
     "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
     "lint:fix": "eslint 'src/**/*.{js,jsx,ts,tsx}' --fix",
     "deploy-storybook": "gh-pages -d storybook-static"
+  },
+  "peerDependencies": {
+    "react": "^18.3.1 || ^19.0.0",
+    "react-dom": "^18.3.1 || ^19.0.0"
   },
   "keywords": [],
   "author": "",
@@ -26,8 +31,8 @@
     "class-variance-authority": "^0.7.0",
     "classnames": "^2.5.1",
     "iconsax-react": "^0.0.8",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "react": "^18.3.1 || ^19.0.0",
+    "react-dom": "^18.3.1 || ^19.0.0",
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
@@ -47,6 +52,7 @@
     "@testing-library/react": "^16.0.0",
     "@types/jest": "^29.5.12",
     "@types/node": "^22.5.4",
+    "@types/react": "^18.3.1",
     "@vitejs/plugin-react": "^4.3.1",
     "autoprefixer": "^10.4.20",
     "eslint": "^9.9.1",
@@ -65,16 +71,26 @@
     "ts-node": "^10.9.2",
     "tslib": "^2.7.0",
     "typescript": "^5.5.4",
-    "vite": "^5.4.2"
+    "vite": "^5.4.2",
+    "vite-plugin-dts": "^4.4.0"
   },
   "eslintConfig": {
     "extends": [
       "plugin:storybook/recommended"
     ]
   },
+  "exports": {
+    ".": {
+      "import": "./dist/eventfuzz-components-library.es.js",
+      "require": "./dist/eventfuzz-components-library.umd.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./tailwind-config": "./dist/tailwind.config.js"
+  },
   "files": [
-    "dist",
-    "src",
-    "README.md"
-  ]
+    "dist"
+  ],
+  "publishConfig": {
+    "registry": "http://localhost:4873"
+  }
 }
