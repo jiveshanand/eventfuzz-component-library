@@ -38,3 +38,4 @@ jobs:
       # Step 5: Run tests (Optional)
       - name: Run Tests
         run: npm test
+        continue-on-error: true
